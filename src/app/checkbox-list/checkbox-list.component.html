@@ -1,0 +1,11 @@
+<div *ngFor="let item of items">
+  <div>
+    <input type="checkbox" [(ngModel)]="item.checked" (change)="onParentCheckboxChange(item)"> {{ item.name }}
+  </div>
+  <div *ngIf="item.subItems" style="margin-left: 20px;">
+    <div *ngFor="let subItem of item.subItems">
+      <input type="checkbox" [(ngModel)]="subItem.checked"> {{ subItem.name }}
+    </div>
+  </div>
+</div>
+<button (click)="save()">save</button>
