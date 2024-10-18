@@ -14,7 +14,7 @@ import { SharedModule } from '../../shared/shared.module';
 })
 
 
-export class CounteroutputComponent implements OnInit x`` {
+export class CounteroutputComponent implements OnInit  {
   //how the structure of store data is present
   counter$!: Observable<{ counter: number }>;
   constructor(private store : Store<{counter : CounterState}>) {
