@@ -16,13 +16,17 @@ import { SharedModule } from '../../shared/shared.module';
 
 export class CounteroutputComponent implements OnInit  {
   //how the structure of store data is present
-  counter$!: Observable<{ counter: number }>;
+  // counter$!: Observable<{ counter: number }>;
+  counter!:number
   constructor(private store : Store<{counter : CounterState}>) {
 
   }
 
   ngOnInit(): void {
-    this.counter$ = this.store.select('counter')
+    // this.counter$ = this.store.select('counter')
+    this.store.select('counter').subscribe(data => {
+      this.counter = data.counter
+    })
   }
 
 
