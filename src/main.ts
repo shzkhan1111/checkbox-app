@@ -6,10 +6,11 @@ import { routes } from './app/app.routes';
 import { provideRouter } from '@angular/router';
 import { isDevMode, importProvidersFrom } from '@angular/core';  // importProvidersFrom for module imports
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { appReducer } from './app/store/app.state';
 
 const appConfig = {
   providers: [
-    provideStore({ counter: _counterReducer }),  // Provide the store with the reducer
+    provideStore(appReducer),  // Provide the store with the reducer
     provideRouter(routes),
     importProvidersFrom(
       StoreDevtoolsModule.instrument({

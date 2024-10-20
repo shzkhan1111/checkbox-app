@@ -5,6 +5,7 @@ import { Observable, Subscription, share } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../../shared/shared.module';
 import { getCounter } from '../counter/state/counter.selector';
+import { AppState } from '../../store/app.state';
 
 @Component({
   selector: 'app-counteroutput',
@@ -19,7 +20,7 @@ export class CounteroutputComponent implements OnInit  {
   //how the structure of store data is present
   // counter$!: Observable<{ counter: number }>;
   counter$!:Observable<number>
-  constructor(private store : Store<{counter : CounterState}>) {
+  constructor(private store : Store<AppState>) {
 
   }
 

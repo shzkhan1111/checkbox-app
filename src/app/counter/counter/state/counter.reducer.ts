@@ -1,4 +1,3 @@
-import { state } from "@angular/animations";
 import { increment , decrement, reset, customIncrement, changeChannelName } from "./counter.action";
 import { initialState } from "./counter.state";
 import { createReducer , on } from "@ngrx/store";
